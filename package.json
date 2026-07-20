@@ -1,0 +1,33 @@
+{
+  "name": "hellfire-website",
+  "version": "1.0.0",
+  "description": "HELLFIRE AI Solutions public marketing site — Astro static site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HELLFIRE-Solutions/website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/HELLFIRE-Solutions/website/issues"
+  },
+  "homepage": "https://github.com/HELLFIRE-Solutions/website#readme",
+  "private": "true",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.1.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,47 @@
+# HELLFIRE AI Solutions
+
+> AI-agent implementation for mid-market business. We install ready-to-deploy
+> AI modules and place verified AI engineers on contract — DACH-first, then US.
+
+HELLFIRE is a service company, not a SaaS product: every module (office agent,
+sales/GTM agent, RAG kit, agentic-web tag, MCP server, in-house LLM, custom
+architecture) is first proven inside HELLFIRE itself, then installed at a
+client by a specialist. Specialists are outstaffed on contract (part-time,
+minimum, or full-time — never hourly billing) and verified through public
+proof of work rather than resumes.
+
+## Pages
+
+- [Home](https://hellfire.dev/): positioning, the two engagement paths, target
+  segments, and the primary contact CTA (routes to a human, not a chatbot).
+- [Communicator](https://hellfire.dev/communicator): every contact channel —
+  agent chat, email, phone, GitHub, Nostr.
+- [Legal](https://hellfire.dev/legal): Impressum, Datenschutzerklärung, AGB,
+  cookie settings (German-market / DSGVO compliance).
+
+## Modules (open source, one repo each)
+
+- [Office agent](https://github.com/HELLFIRE-Solutions/office-agent) — email,
+  document workflows, internal knowledge base.
+- [Sales / GTM agent](https://github.com/HELLFIRE-Solutions/gtm-agent) — lead
+  qualification, outbound, sales support.
+- [RAG kit](https://github.com/HELLFIRE-Solutions/rag-01) — search and answers
+  grounded in a company's private data.
+- [Agentic-Web Tag](https://github.com/HELLFIRE-Solutions/uni-tag) — llms.txt
+  and structured-data tooling for making a site legible to AI agents.
+- [MCP server](https://github.com/HELLFIRE-Solutions/mcp-dev) — connects
+  client systems into agentic infrastructure.
+- [In-house LLM](https://github.com/HELLFIRE-Solutions/inhouse-llm) — a closed
+  model deployed inside the client's own infrastructure.
+
+## Contact
+
+- Email: hello@hellfire.ai
+- GitHub org: https://github.com/HELLFIRE-Solutions
+- Book a call: https://hellfire.dev/#contact
+
+## Notes for agents
+
+This file is a minimal, hand-written version. A fuller, automatically
+generated version (with per-page detail) ships with the UNI Tag / GEO-AEO
+module — treat this as authoritative until then.

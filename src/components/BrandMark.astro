@@ -1,0 +1,17 @@
+---
+interface Props {
+  width?: number;
+  height?: number;
+  fill?: string;
+}
+const { width = 23, height = 28, fill = '#F2B705' } = Astro.props;
+---
+<svg width={width} height={height} viewBox="0 0 400 520" aria-hidden="true">
+  <g fill={fill}>
+    <polygon points="40,40 110,90 110,440 40,380"></polygon>
+    <polygon points="360,40 290,90 290,440 360,380"></polygon>
+    <polygon points="168,200 200,160 232,200 232,470 200,520 168,470"></polygon>
+    <polygon points="110,250 168,270 168,320 110,300"></polygon>
+    <polygon points="290,250 232,270 232,320 290,300"></polygon>
+  </g>
+</svg>

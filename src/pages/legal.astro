@@ -1,0 +1,318 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="Legal — HELLFIRE AI Solutions"
+  description="Impressum, Datenschutzerklärung, AGB, and cookie settings for HELLFIRE AI Solutions."
+  path="/legal"
+>
+  <div class="page">
+    <Header variant="back" maxWidth="1080px" />
+
+    <div class="legal-inner">
+      <nav class="legal-nav">
+        <div class="legal-nav-label">LEGAL &mdash; RECHTLICHES</div>
+        <a href="#impressum">Impressum</a>
+        <a href="#datenschutz">Datenschutzerklärung</a>
+        <a href="#agb">AGB</a>
+        <a href="#cookies" class="last">Cookie-Einstellungen</a>
+      </nav>
+
+      <div class="legal-content">
+        <section id="impressum">
+          <div class="legal-eyebrow">&sect; 5 TMG / &sect; 18 MSTV</div>
+          <h1>Impressum</h1>
+          <div class="legal-block">
+            <div>
+              <div class="legal-field-label">ANBIETER</div>
+              <p>HELLFIRE AI Solutions <span class="placeholder">[Rechtsform — GmbH / UG]</span><br /><span class="placeholder">[Straße, Hausnummer]</span><br /><span class="placeholder">[PLZ]</span> Berlin, Deutschland</p>
+            </div>
+            <div>
+              <div class="legal-field-label">VERTRETEN DURCH</div>
+              <p><span class="placeholder">[Geschäftsführer:in — Vor- und Nachname]</span></p>
+            </div>
+            <div>
+              <div class="legal-field-label">KONTAKT</div>
+              <p>E-Mail: hello@hellfire.ai<br />Telefon: <span class="placeholder">[+49 …]</span></p>
+            </div>
+            <div>
+              <div class="legal-field-label">REGISTEREINTRAG</div>
+              <p>Handelsregister: <span class="placeholder">[Amtsgericht, HRB-Nummer]</span><br />USt-IdNr.: <span class="placeholder">[DE…]</span></p>
+            </div>
+            <div>
+              <div class="legal-field-label">VERANTWORTLICH FÜR DEN INHALT (&sect; 18 ABS. 2 MSTV)</div>
+              <p><span class="placeholder">[Name, Anschrift]</span></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="datenschutz" class="section-divider">
+          <div class="legal-eyebrow">DSGVO / GDPR</div>
+          <h2>Datenschutzerklärung</h2>
+          <div class="legal-block">
+            <div>
+              <h3>1. Verantwortlicher</h3>
+              <p class="muted">Verantwortlich für die Datenverarbeitung auf dieser Website ist die im Impressum genannte Stelle.</p>
+            </div>
+            <div>
+              <h3>2. Erhobene Daten</h3>
+              <p class="muted">Server-Logfiles, Kontaktanfragen (E-Mail, Formular, Agent-Chat), Terminbuchungen. <span class="placeholder placeholder--small">[Liste an tatsächliche Verarbeitung anpassen]</span></p>
+            </div>
+            <div>
+              <h3>3. KI-gestützte Kommunikation</h3>
+              <p class="muted">Nachrichten an unseren Website-Agenten werden zur Beantwortung Ihrer Anfrage automatisiert verarbeitet. Details zu Anbieter, Speicherdauer und Rechtsgrundlage: <span class="placeholder placeholder--small">[Modell-/Hosting-Anbieter eintragen]</span></p>
+            </div>
+            <div>
+              <h3>4. Ihre Rechte</h3>
+              <p class="muted">Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch (Art. 15–21 DSGVO) sowie Beschwerde bei einer Aufsichtsbehörde.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="agb" class="section-divider">
+          <div class="legal-eyebrow">ALLGEMEINE GESCHÄFTSBEDINGUNGEN</div>
+          <h2>AGB</h2>
+          <div class="legal-block">
+            <div>
+              <h3>&sect; 1 Geltungsbereich</h3>
+              <p class="muted">Diese Bedingungen gelten für alle Verträge über Modul-Installationen und Outstaffing-Leistungen zwischen HELLFIRE AI Solutions und Unternehmern i.S.d. &sect; 14 BGB. <span class="placeholder placeholder--small">[B2B-only bestätigen]</span></p>
+            </div>
+            <div>
+              <h3>&sect; 2 Leistungen</h3>
+              <p class="muted">(1) Installation und Konfiguration agentischer Module. (2) Überlassung verifizierter Spezialisten auf Vertragsbasis. <span class="placeholder placeholder--small">[Leistungsbeschreibung je Modul referenzieren]</span></p>
+            </div>
+            <div>
+              <h3>&sect; 3 Vergütung &middot; &sect; 4 Haftung &middot; &sect; 5 Schlussbestimmungen</h3>
+              <p class="muted"><span class="placeholder placeholder--small">[Von Rechtsberatung ausarbeiten lassen — dieses Gerüst ist kein Rechtsrat]</span></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="cookies" class="section-divider">
+          <div class="legal-eyebrow">TTDSG / EPRIVACY</div>
+          <h2>Cookie-Einstellungen</h2>
+          <div class="cookie-panel">
+            <div class="cookie-row">
+              <div class="cookie-copy">
+                <div class="cookie-name">Notwendig</div>
+                <div class="cookie-desc">Erforderlich für Grundfunktionen der Website. Immer aktiv.</div>
+              </div>
+              <button class="cookie-btn cookie-btn--locked" disabled>IMMER AKTIV</button>
+            </div>
+            <div class="cookie-row">
+              <div class="cookie-copy">
+                <div class="cookie-name">Analyse</div>
+                <div class="cookie-desc">Anonymisierte Statistik zur Verbesserung der Website.</div>
+              </div>
+              <button id="toggle-analytics" class="cookie-btn" data-on="false">AUS</button>
+            </div>
+            <div class="cookie-row cookie-row--last">
+              <div class="cookie-copy">
+                <div class="cookie-name">Marketing</div>
+                <div class="cookie-desc">Kommunikations- und Remarketing-Funktionen.</div>
+              </div>
+              <button id="toggle-marketing" class="cookie-btn" data-on="false">AUS</button>
+            </div>
+            <div class="cookie-actions">
+              <button id="accept-all" class="btn-gold-small">ALLE AKZEPTIEREN</button>
+              <button id="reject-all" class="btn-outline-small">NUR NOTWENDIGE</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <Footer variant="simple" maxWidth="1080px" />
+  </div>
+</Layout>
+
+<style>
+  .page { min-height: 100vh; display: flex; flex-direction: column; }
+  .legal-inner {
+    flex: 1;
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    padding: clamp(32px, 5vw, 56px) 24px 80px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: clamp(24px, 4vw, 56px);
+    align-items: start;
+  }
+  .legal-nav {
+    position: sticky;
+    top: 84px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: 1px solid var(--hairline);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+  }
+  .legal-nav-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--gold-dark);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .legal-nav a { padding: 12px 20px; font-size: 14px; border-bottom: 1px solid var(--hairline); }
+  .legal-nav a.last { border-bottom: none; }
+  .legal-nav a:hover { background: var(--bg-alt); color: var(--ink); }
+
+  .legal-content {
+    grid-column: span 2;
+    min-width: min(100%, 480px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(40px, 6vw, 64px);
+  }
+  .legal-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--gold-dark);
+    margin-bottom: 12px;
+  }
+  .legal-content h1, .legal-content h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(24px, 3vw, 34px);
+    margin: 0 0 24px;
+  }
+  .legal-content h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 0 8px;
+  }
+  .legal-block { display: flex; flex-direction: column; gap: 20px; font-size: 14px; line-height: 1.7; }
+  .legal-block p { margin: 0; }
+  .legal-block p.muted { color: var(--muted); }
+  .legal-field-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .placeholder { font-family: var(--font-mono); color: var(--gold-dark); }
+  .placeholder--small { font-size: 12px; }
+  .section-divider { border-top: 1px solid var(--hairline); padding-top: clamp(32px, 5vw, 48px); }
+
+  .cookie-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: 1px solid var(--hairline);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+  }
+  .cookie-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .cookie-copy { flex: 1; min-width: 0; }
+  .cookie-name { font-family: var(--font-display); font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+  .cookie-desc { font-size: 13px; line-height: 1.5; color: var(--muted); }
+  .cookie-btn {
+    cursor: pointer;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 8px 14px;
+    white-space: nowrap;
+  }
+  .cookie-btn[data-on='true'] { background: var(--gold); }
+  .cookie-btn--locked {
+    cursor: not-allowed;
+    background: var(--bg-alt);
+    color: var(--muted);
+  }
+  .cookie-actions { display: flex; justify-content: flex-end; gap: 12px; padding: 16px 20px; }
+  .btn-gold-small {
+    cursor: pointer;
+    border: 1px solid var(--gold);
+    background: var(--gold);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    padding: 10px 20px;
+  }
+  .btn-gold-small:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .btn-outline-small {
+    cursor: pointer;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    padding: 10px 20px;
+  }
+  .btn-outline-small:hover { background: var(--bg-alt); }
+</style>
+
+<script>
+  interface ConsentState {
+    analytics: boolean;
+    marketing: boolean;
+  }
+
+  const STORAGE_KEY = 'hellfire-cookie-consent';
+  const analyticsBtn = document.getElementById('toggle-analytics') as HTMLButtonElement;
+  const marketingBtn = document.getElementById('toggle-marketing') as HTMLButtonElement;
+
+  function applyState(state: ConsentState) {
+    analyticsBtn.dataset.on = String(state.analytics);
+    analyticsBtn.textContent = state.analytics ? 'AKTIV' : 'AUS';
+    marketingBtn.dataset.on = String(state.marketing);
+    marketingBtn.textContent = state.marketing ? 'AKTIV' : 'AUS';
+  }
+
+  function loadState(): ConsentState {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch {}
+    return { analytics: false, marketing: false };
+  }
+
+  function saveState(state: ConsentState) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    applyState(state);
+  }
+
+  let state = loadState();
+  applyState(state);
+
+  analyticsBtn.addEventListener('click', () => {
+    state = { ...state, analytics: !state.analytics };
+    saveState(state);
+  });
+  marketingBtn.addEventListener('click', () => {
+    state = { ...state, marketing: !state.marketing };
+    saveState(state);
+  });
+  document.getElementById('accept-all')?.addEventListener('click', () => {
+    state = { analytics: true, marketing: true };
+    saveState(state);
+  });
+  document.getElementById('reject-all')?.addEventListener('click', () => {
+    state = { analytics: false, marketing: false };
+    saveState(state);
+  });
+</script>

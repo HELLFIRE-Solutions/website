@@ -1,0 +1,124 @@
+---
+interface Props {
+  variant?: 'full' | 'simple';
+  maxWidth?: string;
+}
+const { variant = 'full', maxWidth = '1200px' } = Astro.props;
+---
+<footer class="site-footer">
+  {variant === 'full' && (
+    <div class="footer-grid" style={`max-width:${maxWidth}`}>
+      <div>
+        <div class="brand-row">
+          <svg width="18" height="22" viewBox="0 0 400 520" aria-hidden="true">
+            <g fill="#F2B705">
+              <polygon points="40,40 110,90 110,440 40,380"></polygon>
+              <polygon points="360,40 290,90 290,440 360,380"></polygon>
+              <polygon points="168,200 200,160 232,200 232,470 200,520 168,470"></polygon>
+              <polygon points="110,250 168,270 168,320 110,300"></polygon>
+              <polygon points="290,250 232,270 232,320 290,300"></polygon>
+            </g>
+          </svg>
+          <span class="brand-word">HELLFIRE</span>
+        </div>
+        <p class="tagline">Fast, trusted AI-agent implementation for mid-market business.</p>
+      </div>
+      <div>
+        <div class="col-label">SITE</div>
+        <div class="col-links">
+          <a href="/#what">What we do</a>
+          <a href="/#trust">Partnership</a>
+          <a href="/#who">Who it's for</a>
+          <a href="/#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="col-label">CONNECT</div>
+        <div class="col-links">
+          <a href="https://github.com/HELLFIRE-Solutions" target="_blank" rel="noopener">GitHub &#8599;</a>
+          <a href="#" rel="noopener">Nostr &#8599;</a>
+          <a href="mailto:hello@hellfire.ai">hello@hellfire.ai</a>
+        </div>
+      </div>
+      <div>
+        <div class="col-label">LEGAL</div>
+        <div class="col-links">
+          <a href="/legal#impressum">Impressum</a>
+          <a href="/legal#datenschutz">Datenschutzerklärung</a>
+          <a href="/legal#agb">AGB</a>
+          <a href="/legal#cookies">Cookie-Einstellungen</a>
+        </div>
+      </div>
+    </div>
+  )}
+  <div class="footer-bar" style={`max-width:${maxWidth}; ${variant === 'simple' ? 'margin-top:0; border-top:none;' : ''}`}>
+    <span>HELLFIRE AI SOLUTIONS &mdash; &copy; 2026</span>
+    <span>BERLIN &middot; DACH &middot; LA &middot; US</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--black);
+    color: var(--muted);
+  }
+  .footer-grid {
+    margin: 0 auto;
+    padding: clamp(40px, 6vw, 64px) 24px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(28px, 4vw, 48px);
+  }
+  .brand-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .brand-word {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--bg);
+  }
+  .tagline {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 32ch;
+  }
+  .col-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--gold-dark);
+    margin-bottom: 16px;
+  }
+  .col-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+  }
+  .col-links a {
+    color: rgba(250, 250, 248, 0.75);
+  }
+  .col-links a:hover {
+    color: var(--gold);
+  }
+  .footer-bar {
+    margin: 0 auto;
+    padding: 24px;
+    margin-top: clamp(28px, 4vw, 44px);
+    border-top: 1px solid var(--hairline-dark);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+</style>
