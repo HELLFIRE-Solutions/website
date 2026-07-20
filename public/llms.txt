@@ -12,11 +12,11 @@ proof of work rather than resumes.
 
 ## Pages
 
-- [Home](https://hellfire.dev/): positioning, the two engagement paths, target
+- [Home](https://hellfiresol.com/): positioning, the two engagement paths, target
   segments, and the primary contact CTA (routes to a human, not a chatbot).
-- [Communicator](https://hellfire.dev/communicator): every contact channel —
+- [Communicator](https://hellfiresol.com/communicator): every contact channel —
   agent chat, email, phone, GitHub, Nostr.
-- [Legal](https://hellfire.dev/legal): Impressum, Datenschutzerklärung, AGB,
+- [Legal](https://hellfiresol.com/legal): Impressum, Datenschutzerklärung, AGB,
   cookie settings (German-market / DSGVO compliance).
 
 ## Modules (open source, one repo each)
@@ -38,7 +38,7 @@ proof of work rather than resumes.
 
 - Email: hello@hellfire.ai
 - GitHub org: https://github.com/HELLFIRE-Solutions
-- Book a call: https://hellfire.dev/#contact
+- Book a call: https://hellfiresol.com/#contact
 
 ## Notes for agents
 

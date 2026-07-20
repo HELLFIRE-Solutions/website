@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hellfire.dev/sitemap.xml
+Sitemap: https://hellfiresol.com/sitemap.xml

@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://hellfire.dev',
+  site: 'https://hellfiresol.com',
   output: 'static',
   integrations: [sitemap()],
 });

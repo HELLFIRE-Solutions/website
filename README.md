@@ -6,7 +6,7 @@
 
 **Стек:** [Astro](https://astro.build), статична генерація (`output: 'static'`), без фреймворку на клієнті — чат-віджет на vanilla JS.
 
-**Статус:** три сторінки готові (Landing, Communicator, Legal), pixel-fidelity до дизайн-хендоффу. `llms.txt` + schema.org (Organization JSON-LD) додано. Деплой підготовлено (`.github/workflows/deploy.yml`, org secrets з сесії 02), але не задеплоєно — блокується доменом `hellfire.dev` (сесія 02, очікується 2026-07-21). Деталі — [DEPLOYMENT.md](./DEPLOYMENT.md).
+**Статус:** живий — **https://hellfiresol.com**. Три сторінки готові (Landing, Communicator, Legal), pixel-fidelity до дизайн-хендоффу. `llms.txt` + schema.org (Organization JSON-LD) додано. CI/CD (`.github/workflows/deploy.yml`) деплоїть `dist/` на сервер при пуші в `main`. Деталі — [DEPLOYMENT.md](./DEPLOYMENT.md).
 
 ## Розробка
 
