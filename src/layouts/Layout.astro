@@ -5,26 +5,58 @@ interface Props {
   title: string;
   description: string;
   path?: string;
+  extraSchema?: object[];
 }
-const { title, description, path = '/' } = Astro.props;
+const { title, description, path = '/', extraSchema = [] } = Astro.props;
 const canonical = new URL(path, Astro.site);
+const ogImage = new URL('/images/logo-full.jpg', Astro.site);
 
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://hellfiresol.com/#organization',
   name: 'HELLFIRE AI Solutions',
+  legalName: 'HELLFIRE AI Solutions',
   url: 'https://hellfiresol.com',
+  slogan: 'We install an AI department into your business.',
   description:
     'Fast, trusted AI-agent implementation for mid-market business: ready-to-deploy AI modules and AI-engineering outstaffing.',
   email: 'hello@hellfire.ai',
+  logo: 'https://hellfiresol.com/images/logo-symbol.jpg',
+  image: 'https://hellfiresol.com/images/logo-full.jpg',
   areaServed: ['DE', 'AT', 'CH', 'US'],
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Berlin',
     addressCountry: 'DE',
   },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'hello@hellfire.ai',
+    contactType: 'sales',
+    url: 'https://hellfiresol.com/communicator',
+    areaServed: ['DE', 'AT', 'CH', 'US'],
+  },
+  knowsAbout: [
+    'AI agent implementation',
+    'GTM / sales automation',
+    'Retrieval-augmented generation',
+    'Model Context Protocol',
+    'GEO / AEO — AI-agent web visibility',
+  ],
   sameAs: ['https://github.com/HELLFIRE-Solutions'],
 };
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://hellfiresol.com/#website',
+  url: 'https://hellfiresol.com',
+  name: 'HELLFIRE AI Solutions',
+  publisher: { '@id': 'https://hellfiresol.com/#organization' },
+};
+
+const jsonLdBlocks = [organizationSchema, websiteSchema, ...extraSchema];
 ---
 <!doctype html>
 <html lang="en">
@@ -35,12 +67,20 @@ const organizationSchema = {
     <link rel="canonical" href={canonical} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="HELLFIRE AI Solutions" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HELLFIRE AI Solutions" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,7 +89,9 @@ const organizationSchema = {
       rel="stylesheet"
     />
 
-    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} is:inline />
+    {jsonLdBlocks.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} is:inline />
+    ))}
   </head>
   <body>
     <slot />

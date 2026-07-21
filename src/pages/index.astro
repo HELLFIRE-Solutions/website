@@ -22,11 +22,36 @@ const segments = [
   { num: 'S-02', name: 'Tour operators & travel', desc: 'Small and mid-sized agencies that need a client-facing booking agent without third-party platforms.' },
   { num: 'S-03', name: 'Compliance-first companies', desc: "Where GDPR / AI Act compliance isn't a nice-to-have but a requirement of any vendor." },
 ];
+
+const serviceCatalogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'AI agent implementation',
+  provider: { '@id': 'https://hellfiresol.com/#organization' },
+  areaServed: ['DE', 'AT', 'CH', 'US'],
+  audience: segments.map((s) => ({ '@type': 'Audience', audienceType: s.name })),
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'HELLFIRE AI modules',
+    itemListElement: modules
+      .filter((m) => m.slug)
+      .map((m) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: m.name,
+          description: m.desc,
+          url: `${githubBase}/${m.slug}`,
+        },
+      })),
+  },
+};
 ---
 <Layout
   title="HELLFIRE AI Solutions — AI-agent implementation for mid-market business"
   description="Fast, trusted AI-agent implementation for mid-market business. Ready-to-deploy AI modules and AI-engineering outstaffing, DACH-first."
   path="/"
+  extraSchema={[serviceCatalogSchema]}
 >
   <div class="page">
     <Header variant="full" />
