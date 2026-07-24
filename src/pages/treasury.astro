@@ -1,0 +1,385 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Static content on this page is sourced only from HELLFIRE-02-Constitution.md
+// (Articles 5 & 6) and HELLFIRE-01-Executive-Summary.md (Section 10).
+// This date marks when that static copy was last checked against those
+// documents — it is not a live timestamp.
+const contentReviewedDate = 'July 24, 2026';
+
+const roadmap = [
+  { num: '01', text: 'Complete German entity formation and initial operating build-out — module catalog, first client engagements, DACH sales motion.' },
+  { num: '02', text: 'Establish initial treasury allocation policy and public treasury dashboard (read-only, company-owned addresses only).' },
+  { num: '03', text: 'Formalize Strategic Partner admission criteria and legal offering structure (Rule 506(c), pending counsel confirmation) alongside a qualified securities attorney.' },
+  { num: '04', text: 'Establish U.S. operating presence with genuine management substance; incorporate a Delaware entity when that substance exists.' },
+  { num: '05', text: 'Expand transparency reporting cadence and, subject to technical and legal review, extend programmable-finance tooling.' },
+];
+---
+<Layout
+  title="Public Treasury — HELLFIRE AI Solutions"
+  description="HELLFIRE's public, company-owned treasury dashboard — balance, Bitcoin holdings, verified addresses, capital allocation, and transparency reports."
+  path="/treasury"
+>
+  <div class="page">
+    <Header variant="back" />
+
+    <section class="treasury-hero">
+      <div class="section-inner">
+        <div class="section-label">11 &mdash; TREASURY BALANCE</div>
+        <h1>Public treasury transparency.</h1>
+        <p class="section-lead">
+          This page discloses HELLFIRE's own treasury — company-owned funds only. It never
+          contains partner-specific holdings, terms, or cap table detail; those live in a
+          separate, private Partner Dashboard.
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat-cell">
+            <div class="stat-label">TOTAL TREASURY VALUE</div>
+            <div class="stat-value stat-value--muted">Not yet active</div>
+            <div class="stat-footnote">
+              Treasury not yet funded.
+              <span class="stamp">Last updated: {contentReviewedDate} &middot; static</span>
+            </div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">FIAT / OPERATING CAPITAL</div>
+            <div class="stat-value stat-value--muted">Not yet active</div>
+            <div class="stat-footnote">
+              Treasury not yet funded.
+              <span class="stamp">Last updated: {contentReviewedDate} &middot; static</span>
+            </div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">BITCOIN HOLDINGS</div>
+            <div class="stat-value stat-value--muted">Not yet active</div>
+            <div class="stat-footnote">
+              Treasury not yet funded.
+              <span class="stamp">Last updated: {contentReviewedDate} &middot; static</span>
+            </div>
+          </div>
+        </div>
+        <p class="hero-note">
+          Once the treasury is funded, this section updates to show total treasury value split
+          between fiat/operating capital and Bitcoin holdings, each carrying its own
+          last-updated marker.
+        </p>
+      </div>
+    </section>
+
+    <section class="btc-section">
+      <div class="section-inner">
+        <div class="section-label">12 &mdash; BTC HOLDINGS</div>
+        <h2 class="section-title">Bitcoin, held on the company's own account.</h2>
+        <p class="section-lead">
+          Bitcoin is a treasury reserve asset under the company's Bitcoin Treasury Policy — a
+          balance-sheet decision, not a product sold or managed on behalf of clients or partners
+          (Constitution, Article 6).
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat-cell">
+            <div class="stat-label">BTC HELD</div>
+            <div class="stat-value stat-value--muted">Not yet active</div>
+            <div class="stat-footnote">
+              Treasury not yet funded.
+              <span class="stamp">Last updated: {contentReviewedDate} &middot; static</span>
+            </div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">BTC ALLOCATION (% OF TREASURY)</div>
+            <div class="stat-value stat-value--muted">N/A</div>
+            <div class="stat-footnote">
+              Treasury not yet funded.
+              <span class="stamp">Last updated: {contentReviewedDate} &middot; static</span>
+            </div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">INTERNAL POLICY CEILING</div>
+            <div class="stat-value stat-value--muted">Policy ceiling: pending publication</div>
+            <div class="stat-footnote">
+              Bitcoin Treasury Policy (Document 4) not yet finalized.
+              <span class="stamp">Last updated: {contentReviewedDate} &middot; static</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-panel">
+          <div class="price-panel-label">LIVE MARKET REFERENCE PRICE</div>
+          <p class="price-panel-note">
+            Not a treasury holding — shown to demonstrate the live price feed this dashboard will
+            use once the treasury is funded.
+          </p>
+          <div class="price-row">
+            <div class="price-cell">
+              <div class="price-ccy">BTC/USD</div>
+              <div class="price-value" id="btc-usd">Loading&hellip;</div>
+            </div>
+            <div class="price-cell">
+              <div class="price-ccy">BTC/EUR</div>
+              <div class="price-value" id="btc-eur">Loading&hellip;</div>
+            </div>
+          </div>
+          <div class="stamp" id="btc-price-updated">Fetching live price from CoinGecko&hellip;</div>
+        </div>
+
+        <p class="policy-note">
+          The Bitcoin Treasury Policy (Document 4), once finalized, will define an internal
+          ceiling on Bitcoin holdings as a share of total company assets, set with margin below
+          the 40% threshold under the U.S. Investment Company Act of 1940 — a binding ceiling the
+          board may lower but not raise without a formal, recorded amendment (Constitution,
+          Article 6.2). Until Document 4 is published, no ceiling figure is shown here.
+        </p>
+      </div>
+    </section>
+
+    <section class="addresses-section">
+      <div class="section-inner">
+        <div class="section-label">13 &mdash; VERIFIED TREASURY ADDRESSES</div>
+        <h2 class="section-title">On-chain, independently verifiable.</h2>
+        <div class="empty-panel">
+          <p class="empty-panel-title">Treasury not yet funded &mdash; addresses will be published here at activation.</p>
+          <p>
+            Once live, each verified treasury address will be listed here with a direct link to
+            a public block explorer (e.g. mempool.space), so any visitor can independently verify
+            the balance on-chain without connecting a wallet.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="allocation-section">
+      <div class="section-inner">
+        <div class="section-label">14 &mdash; CAPITAL ALLOCATION</div>
+        <h2 class="section-title">Policy, not discretion.</h2>
+        <div class="empty-panel">
+          <p class="empty-panel-title">Capital Allocation Policy in development, to be published here.</p>
+          <p>
+            Bitcoin is held under a written, board-approved Capital Allocation Policy (Document
+            5) once finalized — reflecting a belief that transparent, auditable treasury
+            management is consistent with the company's transparency principle (Constitution,
+            Articles 2.5 and 6.1).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reports-section">
+      <div class="section-inner">
+        <div class="section-label">15 &mdash; TRANSPARENCY REPORTS</div>
+        <h2 class="section-title">Periodic, public, dated.</h2>
+        <div class="empty-panel">
+          <p class="empty-panel-title">First transparency report to be published &mdash; target date to be announced.</p>
+          <p>
+            Reports will appear here in order as they are published, each with its own
+            publication date.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="roadmap-section">
+      <div class="section-inner">
+        <div class="section-label section-label--gold">16 &mdash; ROADMAP</div>
+        <h2 class="section-title">Where this is headed.</h2>
+        <p class="section-lead">
+          High-level milestones, drawn from the company's roadmap (Executive Summary, Section 10).
+        </p>
+        <div class="roadmap-list">
+          {roadmap.map((r) => (
+            <div class="roadmap-row">
+              <div class="roadmap-num">{r.num}</div>
+              <div class="roadmap-text">{r.text}</div>
+            </div>
+          ))}
+        </div>
+        <p class="hero-note">
+          <span class="stamp">Content reviewed: {contentReviewedDate} &middot; static, sourced from Executive Summary &sect;10</span>
+        </p>
+      </div>
+    </section>
+
+    <Footer variant="simple" />
+  </div>
+</Layout>
+
+<style>
+  .page { min-height: 100vh; }
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(56px, 8vw, 96px) 24px;
+  }
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .section-label--gold { color: var(--gold-dark); }
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(26px, 3.4vw, 40px);
+    margin: 0 0 12px;
+  }
+  .section-lead {
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 62ch;
+    margin: 0 0 32px;
+  }
+
+  .treasury-hero { border-bottom: 1px solid var(--hairline); }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(32px, 4.8vw, 56px);
+    line-height: 1.12;
+    margin: 0;
+    max-width: 22ch;
+    letter-spacing: 0.01em;
+  }
+  .treasury-hero .section-lead { margin: 28px 0 40px; }
+  .hero-note { color: var(--muted); font-size: 14px; line-height: 1.6; max-width: 62ch; margin: 28px 0 0; }
+
+  /* Stat grid, reused across sections 11 & 12 */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+  }
+  .stat-cell { background: var(--bg); padding: clamp(20px, 3vw, 28px); }
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--gold-dark);
+    margin-bottom: 14px;
+  }
+  .stat-value {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .stat-value--muted { color: var(--muted); }
+  .stat-footnote { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .stamp {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* BTC section */
+  .btc-section { border-bottom: 1px solid var(--hairline); background: var(--bg-alt); }
+  .btc-section .stat-grid { margin-bottom: 32px; }
+  .price-panel {
+    border-top: 3px solid var(--gold);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(8px);
+    padding: clamp(24px, 3.4vw, 36px);
+    max-width: 60ch;
+    margin-bottom: 28px;
+  }
+  .price-panel-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--gold-dark);
+    margin-bottom: 10px;
+  }
+  .price-panel-note { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0 0 20px; }
+  .price-row { display: flex; gap: clamp(24px, 4vw, 48px); flex-wrap: wrap; margin-bottom: 14px; }
+  .price-ccy {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .price-value {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(20px, 2.6vw, 28px);
+  }
+  .policy-note { color: var(--muted); font-size: 14px; line-height: 1.65; max-width: 68ch; margin: 0; }
+
+  /* Empty-state panels: addresses, capital allocation, reports */
+  .addresses-section { border-bottom: 1px solid var(--hairline); }
+  .allocation-section { border-bottom: 1px solid var(--hairline); background: var(--bg-alt); }
+  .reports-section { border-bottom: 1px solid var(--hairline); }
+  .empty-panel {
+    border: 1px dashed rgba(20, 20, 20, 0.2);
+    padding: clamp(24px, 3.4vw, 40px);
+    max-width: 68ch;
+  }
+  .empty-panel-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 17px;
+    margin: 0 0 12px;
+  }
+  .empty-panel p:not(.empty-panel-title) { color: var(--muted); line-height: 1.6; margin: 0; font-size: 14px; }
+
+  /* Roadmap */
+  .roadmap-section { border-bottom: 1px solid var(--hairline); }
+  .roadmap-list {
+    border-top: 1px solid var(--hairline);
+  }
+  .roadmap-row {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .roadmap-num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: var(--gold-dark);
+  }
+  .roadmap-text { line-height: 1.6; max-width: 68ch; }
+</style>
+
+<script>
+  const usdEl = document.getElementById('btc-usd');
+  const eurEl = document.getElementById('btc-eur');
+  const updatedEl = document.getElementById('btc-price-updated');
+
+  async function loadBtcPrice() {
+    try {
+      const res = await fetch(
+        'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,eur&include_last_updated_at=true'
+      );
+      if (!res.ok) throw new Error(`CoinGecko responded ${res.status}`);
+      const data = await res.json();
+      const btc = data.bitcoin;
+      if (!btc) throw new Error('Unexpected response shape');
+
+      if (usdEl) usdEl.textContent = `$${btc.usd.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+      if (eurEl) eurEl.textContent = `€${btc.eur.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+
+      if (updatedEl) {
+        const ts = btc.last_updated_at ? new Date(btc.last_updated_at * 1000) : new Date();
+        updatedEl.textContent = `Last updated: ${ts.toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' })} UTC · live, source: CoinGecko`;
+      }
+    } catch (err) {
+      if (usdEl) usdEl.textContent = 'Unavailable';
+      if (eurEl) eurEl.textContent = 'Unavailable';
+      if (updatedEl) updatedEl.textContent = 'Live price temporarily unavailable · not sourced';
+    }
+  }
+
+  loadBtcPrice();
+</script>
