@@ -1,14 +1,14 @@
 # HELLFIRE AI Solutions — Website
 
-Публічний сайт HELLFIRE AI Solutions: позиціонування, пропозиція (модулі під ключ / фахівець на контракт), сегменти клієнтів, CTA на контакт з людиною (не чат-бот).
+Public HELLFIRE AI Solutions site: positioning, offer (turnkey modules / specialist on contract), client segments, CTA to contact a human (not a chatbot).
 
-Перший полігон для модуля [UNI Tag](../uni-tag) (llms.txt, structured data) — dogfooding GEO/AEO на власному сайті.
+First testbed for the [UNI Tag](../uni-tag) module (llms.txt, structured data) — dogfooding GEO/AEO on our own site.
 
-**Стек:** [Astro](https://astro.build), статична генерація (`output: 'static'`), без фреймворку на клієнті — чат-віджет на vanilla JS.
+**Stack:** [Astro](https://astro.build), static generation (`output: 'static'`), no client-side framework — chat widget in vanilla JS.
 
-**Статус:** живий — **https://hellfiresol.com**. Три сторінки готові (Landing, Communicator, Legal), pixel-fidelity до дизайн-хендоффу. `llms.txt` + schema.org (Organization JSON-LD) додано. CI/CD (`.github/workflows/deploy.yml`) деплоїть `dist/` на сервер при пуші в `main`. Деталі — [DEPLOYMENT.md](./DEPLOYMENT.md).
+**Status:** live — **https://hellfiresol.com**. Three pages done (Landing, Communicator, Legal), pixel-fidelity to the design handoff. `llms.txt` + schema.org (Organization JSON-LD) added. CI/CD (`.github/workflows/deploy.yml`) deploys `dist/` to the server on push to `main`. Details — [DEPLOYMENT.md](./DEPLOYMENT.md).
 
-## Розробка
+## Development
 
 ```
 npm install
@@ -16,4 +16,4 @@ npm run dev      # http://localhost:4321
 npm run build     # -> dist/
 ```
 
-**Ліцензія:** MIT.
+**License:** MIT.
