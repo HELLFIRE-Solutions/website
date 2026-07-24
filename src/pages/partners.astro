@@ -1,0 +1,319 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const contributions = [
+  'Engineering', 'Product', 'AI', 'Bitcoin', 'Distribution',
+  'Legal', 'Finance', 'Partnerships', 'Business development',
+];
+
+const steps = [
+  { num: '01', name: 'Application' },
+  { num: '02', name: 'Interview' },
+  { num: '03', name: 'Private Due Diligence Room', note: '(document review)' },
+  { num: '04', name: 'Investment Decision' },
+  { num: '05', name: 'Partner Dashboard Access' },
+];
+---
+<Layout
+  title="Strategic Partners — HELLFIRE AI Solutions"
+  description="HELLFIRE seeks strategic partners, not passive investors — capital alongside expertise, network access, or execution capacity."
+  path="/partners"
+>
+  <div class="page">
+    <Header variant="back" />
+
+    <section class="partners-hero">
+      <div class="section-inner">
+        <div class="section-label">06 &mdash; STRATEGIC PARTNERS</div>
+        <h1>We don't seek passive investors.<br />We seek strategic partners.</h1>
+        <p class="section-lead">
+          A strategic partner contributes capital alongside expertise, network access, or
+          execution capacity — not a check with nothing else attached.
+        </p>
+      </div>
+    </section>
+
+    <section class="contrib-section">
+      <div class="section-inner">
+        <div class="section-label">07 &mdash; WHAT YOU BRING</div>
+        <h2 class="section-title">Capital, plus one of these.</h2>
+        <div class="contrib-grid">
+          {contributions.map((c) => (
+            <div class="contrib-cell">
+              <span class="dot"></span>{c}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="admission-section">
+      <div class="section-inner">
+        <div class="section-label">08 &mdash; HOW ADMISSION WORKS</div>
+        <h2 class="section-title">Five steps, in order.</h2>
+        <div class="steps-row">
+          {steps.map((s) => (
+            <div class="step-cell">
+              <div class="step-num">{s.num}</div>
+              <div class="step-name">{s.name}</div>
+              {s.note && <div class="step-note">{s.note}</div>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="eligibility-section">
+      <div class="section-inner">
+        <div class="section-label">09 &mdash; ELIGIBILITY</div>
+        <div class="eligibility-panel">
+          <h2 class="eligibility-title">Accredited investors only.</h2>
+          <p>
+            Participation is limited to verified accredited investors, consistent with
+            Rule 506(c) of Regulation D. Self-certification is not sufficient — accreditation is
+            verified by the company, a registered broker-dealer, or a registered investment
+            adviser, before any investment decision is made.
+          </p>
+          <p>
+            This page and the private due diligence room are not open to non-accredited
+            investors.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply" class="apply-section">
+      <div class="section-inner">
+        <div class="section-label section-label--gold">10 &mdash; APPLY</div>
+        <h2 class="apply-title">Apply to become a partner.</h2>
+        <p class="apply-lead">
+          This starts a conversation, not a transaction. Submitting this form does not grant
+          access to anything — it opens the interview stage with the founder.
+        </p>
+
+        <form id="partner-form" class="apply-form">
+          <label class="form-field">
+            <span class="form-label">NAME</span>
+            <input type="text" name="name" required />
+          </label>
+          <label class="form-field">
+            <span class="form-label">CONTACT (EMAIL)</span>
+            <input type="email" name="email" required />
+          </label>
+          <label class="form-field">
+            <span class="form-label">BRIEF BACKGROUND</span>
+            <textarea name="background" rows="4" placeholder="Who you are, and what you'd bring beyond capital."></textarea>
+          </label>
+          <label class="form-check">
+            <input type="checkbox" name="accredited" required />
+            <span>
+              I believe I qualify as an accredited investor under Rule 506(c).
+              <span class="form-check-note">
+                This is a first filter, not verification. Accreditation is verified separately,
+                as described above, before any investment decision.
+              </span>
+            </span>
+          </label>
+          <button type="submit" class="btn-gold">SEND APPLICATION</button>
+          <p class="form-footnote">Opens your email client, addressed to the founder. No account, dashboard, or document access is created by submitting this form.</p>
+        </form>
+      </div>
+    </section>
+
+    <Footer variant="simple" />
+  </div>
+</Layout>
+
+<style>
+  .page { min-height: 100vh; }
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(56px, 8vw, 96px) 24px;
+  }
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .section-label--gold { color: var(--gold-dark); margin-bottom: 20px; }
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(26px, 3.4vw, 40px);
+    margin: 0 0 12px;
+  }
+  .section-lead {
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 56ch;
+    margin: 28px 0 0;
+  }
+
+  .partners-hero { border-bottom: 1px solid var(--hairline); }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(32px, 4.8vw, 56px);
+    line-height: 1.12;
+    margin: 0;
+    max-width: 20ch;
+    letter-spacing: 0.01em;
+  }
+
+  /* What you bring */
+  .contrib-section { border-bottom: 1px solid var(--hairline); background: var(--bg-alt); }
+  .contrib-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+  }
+  .contrib-cell {
+    background: var(--bg);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .dot { width: 8px; height: 8px; background: var(--gold); display: inline-block; flex-shrink: 0; }
+
+  /* Admission */
+  .admission-section { border-bottom: 1px solid var(--hairline); }
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+  }
+  .step-cell { background: var(--bg); padding: 24px; }
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: var(--gold-dark);
+    margin-bottom: 12px;
+  }
+  .step-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .step-note { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  /* Eligibility */
+  .eligibility-section { border-bottom: 1px solid var(--hairline); background: var(--bg-alt); }
+  .eligibility-panel {
+    border-top: 3px solid var(--gold);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(8px);
+    padding: clamp(28px, 4vw, 44px);
+    max-width: 68ch;
+  }
+  .eligibility-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(22px, 2.6vw, 28px);
+    margin: 0 0 16px;
+  }
+  .eligibility-panel p { line-height: 1.65; margin: 0 0 14px; }
+  .eligibility-panel p:last-child { margin-bottom: 0; }
+
+  /* Apply */
+  .apply-section { border-bottom: 1px solid var(--hairline); }
+  .apply-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(26px, 3.4vw, 38px);
+    margin: 0 0 16px;
+  }
+  .apply-lead { color: var(--muted); line-height: 1.6; max-width: 56ch; margin: 0 0 40px; }
+
+  .apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 56ch;
+  }
+  .form-field { display: flex; flex-direction: column; gap: 8px; }
+  .form-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+  }
+  .form-field input,
+  .form-field textarea {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--hairline);
+    padding: 12px 14px;
+    resize: vertical;
+  }
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--gold-dark);
+  }
+  .form-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .form-check input { margin-top: 3px; flex-shrink: 0; }
+  .form-check-note { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .btn-gold {
+    align-self: flex-start;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    padding: 16px 32px;
+    margin-top: 8px;
+  }
+  .btn-gold:hover { background: var(--ink); color: var(--bg); }
+  .form-footnote { font-size: 12px; color: var(--muted); margin: 0; }
+</style>
+
+<script>
+  const form = document.getElementById('partner-form') as HTMLFormElement;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = (data.get('name') as string) ?? '';
+    const email = (data.get('email') as string) ?? '';
+    const background = (data.get('background') as string) ?? '';
+
+    const subject = 'Strategic Partner Application';
+    const body = [
+      `Name: ${name}`,
+      `Contact: ${email}`,
+      `Accredited investor (self-declared, Rule 506(c)): Yes`,
+      '',
+      'Background:',
+      background || '(none provided)',
+    ].join('\n');
+
+    window.location.href = `mailto:hello@hellfire.ai?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
